@@ -1,6 +1,7 @@
 .main{
     font-size: large;
     font-family: Verdana;
+    margin: 0;
 }
 
 .container-flex {
@@ -17,26 +18,33 @@
     flex : 1;
 }
 
-.fa-search{
+.fa-2x{
     color: cornflowerblue;
+    padding: 10px;
 }
 
 .center-panel{
     /* background-color: paleturquoise; */
-    flex: 10;
+    flex: 8;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.doodle-panel{
+.empty-panel {
+    flex: 1;
+}
+
+.doodle-panel {
     /* background-color: red; */
-    flex: 3;
+    flex: 1;
     text-align: center;
 }
 
 .pic {
-    height: 500px;
+    max-width: 720px;
+    max-height: 600px;
+    /* height: 500px; */
     /* margin: auto; */
 }
 
@@ -53,13 +61,24 @@
 
 .info-panel{
     /* background-color: papayawhip; */
-    flex: 2;
+    flex: 3;
     text-align: center;
+    /* vertical-align: middle; */
+    align-items: center;
 }
 
 .currsong {
     font-size: x-large;
     font-weight: bold;
+    display: inline-block;
+    position: relative;
+}
+
+.likebutton {
+    color: cornflowerblue;
+    position: absolute;
+    top: -9px;
+    left: -70px;
 }
 
 .currartist {
@@ -69,15 +88,29 @@
 }
 
 .control-panel{
-    /* background-color: pink; */
-    background-color: black;
-    color: white;
+    display: flex;
+    padding: 15px;
+    background-color: #353434;
+    /* color: #d47237; */
     flex: 1;
-    text-align: center;
     align-items: center;
 }
 
-.control-buttons {;
-    vertical-align: middle;
+.control-panel-left {
+    flex:1;
 }
+
+.control-panel-center {
+    flex: 1;
+    /* background-color: crimson; */
+    text-align: center;
+    /* vertical-align: middle; */
+}
+
+.control-panel-right {
+    flex: 1;
+    /* background-color: darkblue; */
+    text-align: end;
+}
+
 

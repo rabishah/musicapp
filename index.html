@@ -12,40 +12,74 @@
 
 
 	<body class="main">
+
         <div class="container-flex">
+
             <div class="search-panel">
                 <i class="fas fa-search fa-2x"></i>
             </div>
+
             <div class="center-panel">
+                <div class="empty-panel"></div>
                 <div class="doodle-panel">
                     <img class="pic" src="doodles/cart is empty,explore,empty cart,box,parcel,package,new package,page not found,cat in the box,warning,warning illustration,empty page,data lost,lost,state,present,shipping,delivery,no data,error page,empty state,emptystate,empty,1763838.png">
                 </div>
                 <div class="playlist-panel">
                     <p style="color: cornflowerblue; font-weight: bold;">Up next</p>
-                    <span class="song">Shades of Men</span> <span class="artist">by Khurangbin</span>
-                    <br>
-                    <span class="song">Grass and Clouds</span> <span class="artist">by Toom Doolie</span>
-                    <br>
-                    <span class="song">The Jogger</span> <span class="artist">by Loom Hartz</span>
-                    <br>
-                    <span class="song">Cosmic's Web</span> <span class="artist">by Purple Cat</span>
+                    <div><span class="song">Shades of Men</span> <span class="artist">by Khurangbin</span></div>
+                    <div><span class="song">Grass and Clouds</span> <span class="artist">by Toom Doolie</span></div>
+                    <div><span class="song">Still DRE</span> <span class="artist">by Snoop Dogg</span></div>
+                    <div><span class="song">Wish I knew you</span> <span class="artist">by The Revivalists</span></div>
                 </div>
             </div>
+
             <div class="info-panel">
-                <i onclick="myFunction(this)" style="color: cornflowerblue;" class="far fa-heart fa-2x"></i>
+                
                 <!-- <div> -->
-                    <span class="currsong" style="bol">August Twelve</span> <br> <span class="currartist">by Khurangbin</span>
+                    <div class="currsong">
+                        <i onclick="myFunction(this)" class="likebutton far fa-heart fa-2x"></i>
+                        August Twelve
+                    </div> 
+                    <div class="currartist">by Khurangbin</div>
                 <!-- </div> -->
             </div>
-            <div class="control-panel">
-                <i class="fas fa-step-backward fa-2x control-buttons"></i>
-                <i class="far fa-play-circle fa-2x control-buttons"></i>
-                <i class="fas fa-step-forward fa-2x control-buttons"></i>
+
+            <div>
+                <!-- playlist code -->
+                <!-- <embed name="playlist"
+                src="playlist.m3u"
+                width="300"
+                height="90"
+                loop="false"
+                hidden="false"
+                autostart="false">
+                </embed> -->
+
+
+                <!-- single song -->
+                <!-- <audio src="songs/StillDRE.mp3" controls>	
+                    <embed 
+                        src="songs/StillDRE.mp3"
+                        width="300"
+                        height="90"
+                        loop="true"
+                        autostart="false">
+                </audio> -->
             </div>
-            <!-- <div>
-                <i class="far fa-step-shuffle fa-2x control-buttons"></i>
-                <i class="far fa-step-menu fa-2x control-buttons"></i>
-            </div> -->
+
+            <div class="control-panel">
+                <div class="control-panel-left"></div>
+                <div class="control-panel-center">
+                    <i class="fas fa-step-backward fa-2x"></i>
+                    <i class="far fa-play-circle fa-2x"></i>
+                    <i class="fas fa-step-forward fa-2x"></i>
+                </div>
+                <div class="control-panel-right">
+                    <i class="fas fa-random fa-2x"></i>
+                    <i class="fas fa-bars fa-2x"></i>
+                </div>
+            </div>
+
         </div>        
            
 		
