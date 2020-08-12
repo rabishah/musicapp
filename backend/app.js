@@ -73,6 +73,21 @@ app.post("/playlist/song", (req, res) => {
   res.json({song});
 });
 
+app.delete("/playlist/song/:id", (req, res) => {
+  let id;
+  try {
+    id = parseInt(req.params.id);
+  } catch (err) {
+    res.status(400).send("Invalid song Id");
+    return;
+  }
+
+  console.log("Deleting song with id", id);
+
+  const song = db.get('playlist.songs').remove({ id }).write();
+  res.json(song);
+});
+
 app.post("/song/:id/heart", (req, res) => {
   const heartStatus = req.body.heartStatus;
   if (heartStatus == undefined || typeof heartStatus !== "boolean") {
