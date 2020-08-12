@@ -76,7 +76,7 @@ The goal is to build a music player app from scratch while learning the basic co
   - [Debugging Chrome](https://javascript.info/debugging-chrome)
   - [Console Commands](https://css-tricks.com/a-guide-to-console-commands/)
 
-## Day 4 - Async programming, Typescript
+## Day 4 (Async programming, Typescript)
 ### Concepts
 - Introduction to async programming in JS
   - Event loop?
@@ -99,7 +99,7 @@ The goal is to build a music player app from scratch while learning the basic co
 ### Resources
 TODO
 
-## Day 5 - Frameworks
+## Day 5 (Frameworks)
 ### Concepts
 - Why use frameworks?
 - Introduction to React - Bare minimum
