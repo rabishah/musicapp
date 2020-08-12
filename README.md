@@ -6,12 +6,12 @@ The goal is to build a music player app from scratch while learning the basic co
 - Candidate will by the end of the day move their code into a different branch in this repository.
 - Mentors / Buddies reviews the code and provides input and feedbacks.
 ### Timeline
-- [Day 1 - HTML, CSS](#day-1-html-css)
+- [Day 1 - HTML, CSS](#day-1-htmlcss)
 - [Day 2/3 - Introduction to JS](#day-23-introduction-to-JS)
 - [Day 4 - Async programming, Typescript](#day-4-async-programming-typescript)
 - [Day 5 - Frameworks](#day-5-frameworks)
 
-## Day 1 (HTML,CSS)
+## Day 1 (HTML, CSS)
 ### Concepts
 - Basics of HTML, CSS
 ### Exercises
