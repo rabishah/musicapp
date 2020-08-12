@@ -11,7 +11,7 @@ The goal is to build a music player app from scratch while learning the basic co
 - [Day 4 - Async programming, Typescript](#day-4-async-programming-typescript)
 - [Day 5 - Frameworks](#day-5-frameworks)
 
-## Day 1 (HTML & CSS)
+## Day 1 (HTML,CSS)
 ### Concepts
 - Basics of HTML, CSS
 ### Exercises
