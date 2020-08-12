@@ -4,8 +4,8 @@ var bodyParser = require("body-parser");
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 const _ = require("lodash");
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger.json");
 
 const port = 3000;
 
@@ -24,7 +24,8 @@ db.defaults({
         title: "Frozen",
         artist: "Madonna",
         cover: "https://www.lololyrics.com/img/cover/free/7442.jpeg",
-        url: 'https://www.youtube.com/watch?v=XS088Opj9o0',
+        url: "https://www.youtube.com/watch?v=XS088Opj9o0",
+        heart: false,
       },
     ],
   },
@@ -37,7 +38,7 @@ app.use(bodyParser.json());
  *                 API ROUTES
  **********************************************/
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
@@ -46,9 +47,12 @@ app.get("/", (req, res) => {
 app.get("/playlist", (req, res) => {
   console.log("Get playlist info");
   const playlist = db.get("playlist").value();
-  playlist.songs = playlist.songs.map((song) => _.pick(song, ["id", "title"]));
+  const playlistRes = {
+    ...playlist,
+    songs: playlist.songs.map((song) => _.pick(song, ["id", "title"]))
+  }
 
-  return res.json(playlist);
+  return res.json(playlistRes);
 });
 
 app.post("/playlist/song", (req, res) => {
@@ -70,7 +74,7 @@ app.post("/playlist/song", (req, res) => {
   db.set("nextSongId", nextId + 1).write();
   db.set("playlist.lastUpdated", Date.now()).write();
 
-  res.json({song});
+  res.json({ song });
 });
 
 app.delete("/playlist/song/:id", (req, res) => {
@@ -84,17 +88,16 @@ app.delete("/playlist/song/:id", (req, res) => {
 
   console.log("Deleting song with id", id);
 
-  const song = db.get('playlist.songs').remove({ id }).write();
+  const song = db.get("playlist.songs").remove({ id }).write();
   res.json(song);
 });
 
 app.post("/song/:id/heart", (req, res) => {
   const heartStatus = req.body.heartStatus;
   if (heartStatus == undefined || typeof heartStatus !== "boolean") {
-    res.status(400).send('Invalid heart status');
-    return
+    res.status(400).send("Invalid heart status");
+    return;
   }
-
 
   let id;
   try {
@@ -104,9 +107,13 @@ app.post("/song/:id/heart", (req, res) => {
     return;
   }
 
-  const song = db.get('playlist.songs').find({ id }).assign({ heart: heartStatus }).write();
+  const song = db
+    .get("playlist.songs")
+    .find({ id })
+    .assign({ heart: heartStatus })
+    .write();
 
-  res.json(song)
+  res.json(song);
 });
 
 app.get("/song/:id", (req, res) => {
@@ -123,7 +130,6 @@ app.get("/song/:id", (req, res) => {
   const song = db.get("playlist.songs").find({ id }).value();
   res.json(song);
 });
-
 
 /***********************************************
  *               SERVER INIT
