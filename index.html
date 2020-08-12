@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html>
-
 	<head>
 	    <meta charset="utf-8" />
 	    <title>MyPlayer</title>
@@ -13,6 +12,7 @@
 
 	<body class="main">
 
+        <!-- <div id="songTitle">Shades of man</div> -->
         <div class="container-flex">
 
             <div class="search-panel">
@@ -24,61 +24,42 @@
                 <div class="doodle-panel">
                     <img class="pic" src="doodles/cart is empty,explore,empty cart,box,parcel,package,new package,page not found,cat in the box,warning,warning illustration,empty page,data lost,lost,state,present,shipping,delivery,no data,error page,empty state,emptystate,empty,1763838.png">
                 </div>
-                <div class="playlist-panel">
-                    <p style="color: cornflowerblue; font-weight: bold;">Up next</p>
-                    <div><span class="song">Shades of Men</span> <span class="artist">by Khurangbin</span></div>
-                    <div><span class="song">Grass and Clouds</span> <span class="artist">by Toom Doolie</span></div>
-                    <div><span class="song">Still DRE</span> <span class="artist">by Snoop Dogg</span></div>
-                    <div><span class="song">Wish I knew you</span> <span class="artist">by The Revivalists</span></div>
+                <div id="playlist-panel">
+                    <div id="playlistMenu">
+                        <p style="color: cornflowerblue; font-weight: bold;">Up next</p>
+                        <div><span class="song">Grass and Clouds</span> <span class="artist">by Toom Doolie</span></div>
+                        <div><span class="song">Still DRE</span> <span class="artist">by Snoop Dogg</span></div>
+                        <div><span class="song">Wish I knew you</span> <span class="artist">by The Revivalists</span></div>
+                    </div>
                 </div>
             </div>
 
             <div class="info-panel">
-                
-                <!-- <div> -->
                     <div class="currsong">
-                        <i onclick="myFunction(this)" class="likebutton far fa-heart fa-2x"></i>
-                        August Twelve
+                        <i onclick="myFunction(this)" class="far fa-heart"></i>
+                        <div id="songTitle" class="songTitle">Shades of man</div>
                     </div> 
-                    <div class="currartist">by Khurangbin</div>
-                <!-- </div> -->
+                    <div id="songArtist" class="songArtist">by Khurangbin</div>
             </div>
 
-            <div>
-                <!-- playlist code -->
-                <!-- <embed name="playlist"
-                src="playlist.m3u"
-                width="300"
-                height="90"
-                loop="false"
-                hidden="false"
-                autostart="false">
-                </embed> -->
-
-
-                <!-- single song -->
-                <!-- <audio src="songs/StillDRE.mp3" controls>	
-                    <embed 
-                        src="songs/StillDRE.mp3"
-                        width="300"
-                        height="90"
-                        loop="true"
-                        autostart="false">
-                </audio> -->
+            <div id="seek-bar">
+                <div id="fill" class="fill"></div>
+                <div id="handle"></div>
             </div>
 
             <div class="control-panel">
                 <div class="control-panel-left"></div>
                 <div class="control-panel-center">
-                    <i class="fas fa-step-backward fa-2x"></i>
-                    <i class="far fa-play-circle fa-2x"></i>
-                    <i class="fas fa-step-forward fa-2x"></i>
+                    <i class="fas fa-step-backward fa-2x" onclick="pre()"></i>
+                    <i onclick="playOrPauseSong(this)" class="far fa-play-circle" id="playButton"></i>
+                    <i class="fas fa-step-forward fa-2x" onclick="next()"></i>
                 </div>
                 <div class="control-panel-right">
-                    <i class="fas fa-random fa-2x"></i>
-                    <i class="fas fa-bars fa-2x"></i>
+                    <i class="fas fa-random fa-2x" onclick="shuffle(this)"></i>
+                    <i class="fas fa-bars fa-2x" onclick="togglePlaylist()"></i>
                 </div>
             </div>
+
 
         </div>        
            
