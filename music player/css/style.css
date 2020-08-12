@@ -1,0 +1,105 @@
+.container{
+
+    position: relative;
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+
+}
+
+#main-area{
+    display: flex;
+    height:700px;
+}
+
+#search{
+    margin-top: 50px;
+    margin-left: 100px;
+    flex: 1;
+}
+
+#searchMe{
+    padding: 6px;
+    border: none;
+    font-size: 17px;
+}
+
+#cover-area{
+    flex:3;
+}
+
+.cover{
+    /* padding : 10px; */
+    text-align: center;
+}
+
+.playlist{
+    flex:1;
+}
+
+#songs-playlist{
+    list-style-type: none;
+    margin-top: 300px
+}
+
+#back-cover{
+    height : 300px ;
+    width : 300px ;
+    margin-top: 200px;
+}
+
+.main-title{
+    text-align: center;
+}
+
+#title{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.buttons{
+
+    background-color: black ;
+    display: flex;
+
+}
+
+.button{
+    background-color: black ;
+    border : none ;
+}
+
+#progress{
+    width:100%;
+    background-color: white;
+}
+
+#progress_bar{
+    width: 0%;
+    height: 5px;
+    background-color: red;
+}
+
+.icon-design{
+    color : dodgerblue;
+    font-size:28px;
+}
+
+.icon-design2{
+    color : white;
+    font-size:28px;
+}
+
+#play-pause-control{
+    flex: 8;
+    text-align: center;
+}
+
+#playlist-control{
+    flex: 2;
+    text-align: right;
+}
+
+#prev{
+    margin-left: 300px;
+}
