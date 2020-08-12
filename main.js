@@ -1,7 +1,107 @@
-function previousSong() {}
-function nextSong() {}
-function playPause() {
-	const song = document.querySelector("#song");
-	song.play();
+let playlist = [
+	{
+		name: "Level of Concern",
+		author: "Twenty One Pilots",
+		audio_src: "./src/music/level_of_concern.mp3",
+		img_src: "./src/images/level_of_concern.jpeg",
+	},
+	{
+		name: "Kalimba",
+		author: "Khurangbin",
+		audio_src: "./src/music/Kalimba.mp3",
+		img_src: "./src/images/imagine_dragons.jpeg",
+	},
+	{
+		name: "Stars",
+		author: "Pink Floyd",
+		audio_src: "./src/music/star.mp3",
+		img_src: "./src/images/pink_floyd.png",
+	},
+];
+
+let song_index = 0;
+let is_playing = 0;
+let list_size = 2;
+let thumbnail = document.getElementById("thumbnail");
+let audio = document.getElementById("song");
+let play_bttn = document.getElementById("play-bttn");
+let pause_bttn = document.getElementById("pause-bttn");
+let show_playlist = document.getElementById("show-playlist");
+let progress_bar = document.getElementById("progress-bar");
+let timer;
+let ul_playlist = document.getElementById("playlist");
+
+loadSong();
+
+for (let i = 0, j = 1; i < list_size; i++) {
+	let next_item_name = playlist[j].name + " by " + playlist[j].author;
+	j = (j + 1) % playlist.length;
+	let li = document.createElement("li");
+	li.appendChild(document.createTextNode(next_item_name));
+	ul_playlist.appendChild(li);
 }
-function changeProgressBar() {}
+
+function loadSong() {
+	clearInterval(timer);
+	progress_bar.value = 0;
+	audio.src = playlist[song_index].audio_src;
+	thumbnail.src = playlist[song_index].img_src;
+	document.getElementById("song-name").innerHTML = playlist[song_index].name;
+	document.getElementById("song-author").innerHTML =
+		playlist[song_index].author;
+	timer = setInterval(changeProgressBar, 100);
+	audio.addEventListener("ended", nextSong);
+}
+function previousSong() {
+	if (song_index > 0) song_index--;
+	else song_index = playlist.length - 1;
+	is_playing = 0;
+	loadSong();
+	playPause();
+
+	let idx = (song_index + 1) % playlist.length;
+
+	ul_playlist.removeChild(ul_playlist.childNodes[list_size - 1]);
+	let next_item_name = playlist[idx].name + " by " + playlist[idx].author;
+	let li = document.createElement("li");
+	li.appendChild(document.createTextNode(next_item_name));
+	ul_playlist.insertBefore(li, ul_playlist.childNodes[0]);
+}
+function nextSong() {
+	if (song_index + 1 < playlist.length) song_index++;
+	else song_index = 0;
+	is_playing = 0;
+	loadSong();
+	playPause();
+
+	let idx = (song_index + list_size) % playlist.length;
+	ul_playlist.removeChild(ul_playlist.childNodes[0]);
+	let next_item_name = playlist[idx].name + " by " + playlist[idx].author;
+	let li = document.createElement("li");
+	li.appendChild(document.createTextNode(next_item_name));
+	ul_playlist.appendChild(li);
+}
+function playPause() {
+	if (is_playing == 0) {
+		play_bttn.style.display = "none";
+		pause_bttn.style.display = "block";
+		is_playing = 1;
+		audio.play();
+	} else {
+		play_bttn.style.display = "block";
+		pause_bttn.style.display = "none";
+		is_playing = 0;
+		audio.pause();
+	}
+}
+
+function showPlaylist() {
+	if (show_playlist.style.display == "none")
+		show_playlist.style.display = "block";
+	else show_playlist.style.display = "none";
+}
+function shuffle() {}
+function changeProgressBar() {
+	progress_bar.value = audio.currentTime * (100 / audio.duration);
+}
+function like() {}

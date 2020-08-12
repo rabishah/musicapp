@@ -4,83 +4,66 @@
 		<meta charset="utf-8" />
 		<title>kc-tunes</title>
 		<link rel="stylesheet" href="main.css" />
-		<script src="main.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+			integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+			crossorigin="anonymous"
+		/>
 	</head>
 	<body>
 		<div class="container">
-			<audio src="./src/music/level_of_concern.mp3" id="song"></audio>
-			<div class="search-container">
-				<img class="fixed-size" src="./src/icons/search.png" />
-			</div>
+			<audio src="" id="song"></audio>
+			<div class="search-container"><i class="fas fa-search"></i></div>
 			<div class="song-info">
 				<div class="side1"></div>
 				<div class="side2">
-					<div>
-						<img src="./src/images/level_of_concern.jpeg" id="thumbnail" />
-					</div>
+					<div class="cside2"><img src="" id="thumbnail" /></div>
+
 					<div class="song-artist">
-						<div>
-							<img class="fixed-size2" src="./src/icons/like.png" />
-							Level of concern
-						</div>
-						<div>Twenty one Pilots</div>
+						<i class="fas fa-heart fa-2x" id="song-name"> Song</i>
+
+						<h3 id="song-author">Author</h3>
 					</div>
 				</div>
-				<div class="side3">
-					<ul
-						style="
-							text-align: right;
-							list-style-type: none;
-							padding-right: 20px;
-						"
-					>
-						<li style="color: orange;">Up next</li>
-						<li>Shades of Men by Khurangbin</li>
-						<li>Grass and Clouds by Toom Dooli</li>
-						<li>The Jogger by Loom Hartz</li>
-						<li>Cosmic's Web by Purple Cat</li>
-					</ul>
+				<div class="side3" style="text-align: right; margin-right: 42px;">
+					<div id="show-playlist">
+						<h4 style="color: rgb(255, 136, 0);">Up next</h4>
+						<ul id="playlist" style="list-style-type: none;"></ul>
+					</div>
 				</div>
 			</div>
 
 			<footer style="background-color: rgb(72, 72, 72);">
-				<input
-					type="range"
-					class="slider"
-					id="progress-bar"
-					min="0"
-					max=""
-					value="10"
-				/>
+				<input type="range" id="progress-bar" min="0" max="100" value="10" />
 
 				<div class="song-config">
-					<img
-						class="fixed-size"
-						src="./src/icons/backward.png"
-						onclick="previousSong()"
-						id="previous-song"
-					/>
-					<img
-						class="fixed-size"
-						src="./src/icons/play.png"
-						onclick="playPause()"
-						id="play-pause"
-					/>
-					<img
-						class="fixed-size"
-						src="./src/icons/forward.png"
-						onclick="nextSong()"
-						id="next-song"
-					/>
+					<div class="fside1"></div>
+					<div class="fside2">
+						<i class="fas fa-backward fixed-size" onclick="previousSong()"></i>
 
-					<img
-						id="suffle-button"
-						class="fixed-size"
-						src="./src/icons/suffle.png"
-					/>
-					<img id="list-button" class="fixed-size" src="./src/icons/list.png" />
+						<i
+							class="fixed-size fas fa-play"
+							id="play-bttn"
+							onclick="playPause()"
+						></i>
+
+						<i
+							class="fixed-size fas fa-pause"
+							id="pause-bttn"
+							style="display: none;"
+							onclick="playPause()"
+						></i>
+						<i class="fas fa-forward fixed-size" onclick="nextSong()"></i>
+					</div>
+					<div class="fside3" style="margin-right: 22px;">
+						<i class="fas fa-random fixed-size" onclick="shuffle()"></i>
+						<i class="fas fa-list fixed-size" onclick="showPlaylist()"></i>
+					</div>
 				</div>
 			</footer>
 		</div>
+
+		<script src="main.js"></script>
 	</body>
 </html>
