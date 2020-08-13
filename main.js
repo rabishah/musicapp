@@ -34,8 +34,6 @@ let progress_bar = document.getElementById("progress-bar");
 let timer;
 let ul_playlist = document.getElementById("playlist");
 
-loadSong();
-
 for (let i = 0, j = 1; i < list_size; i++) {
 	let next_item_name = playlist[j].name + " by " + playlist[j].author;
 	j = (j + 1) % playlist.length;
@@ -43,7 +41,7 @@ for (let i = 0, j = 1; i < list_size; i++) {
 	li.appendChild(document.createTextNode(next_item_name));
 	ul_playlist.appendChild(li);
 }
-
+loadSong();
 function loadSong() {
 	clearInterval(timer);
 	progress_bar.value = 0;
