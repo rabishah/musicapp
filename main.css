@@ -16,7 +16,24 @@ li {
 .search-container {
 	margin: 20px auto 0 20px;
 	padding: 30px;
+	width: auto;
 }
+.search {
+	border-top-style: hidden;
+	border-right-style: hidden;
+	border-left-style: hidden;
+	border-bottom: 5px solid rgb(255, 136, 0);
+	background: none;
+	outline: none;
+	font-size: 120%;
+	padding: 0;
+	width: 0;
+	transition: 0.3s ease-in;
+}
+.search-container:hover > input {
+	width: 30vw;
+}
+
 .container {
 	background-color: #fff;
 	width: 100%;
@@ -86,3 +103,17 @@ li {
 	min-width: 100%;
 	margin: 0;
 }
+/*#progress-bar::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 8px;
+	height: 8px;
+	background: #4caf50;
+	cursor: pointer;
+}
+.progress-bar::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	background: #4caf50;
+	cursor: pointer;
+}*/

@@ -14,28 +14,61 @@
 	<body>
 		<div class="container">
 			<audio src="" id="song"></audio>
-			<div class="search-container"><i class="fas fa-search"></i></div>
+			<div class="search-container">
+				<input type="text" class="search" placeholder="Search" />
+				<a href="#"
+					><i class="fas fa-search fa-2x" style="color: rgb(255, 136, 0);"></i
+				></a>
+			</div>
 			<div class="song-info">
 				<div class="side1"></div>
 				<div class="side2">
-					<div class="cside2"><img src="" id="thumbnail" /></div>
+					<div class="cside2">
+						<img
+							src=""
+							id="thumbnail"
+							style="max-height: 1200px; max-width: 700px;"
+						/>
+					</div>
 
 					<div class="song-artist">
-						<i class="fas fa-heart fa-2x" id="song-name"> Song</i>
+						<i
+							class="far fa-heart fa-2x"
+							id="unlike-bttn"
+							onclick="likeUnlike()"
+						>
+						</i>
+						<i class="fas fa-heart fa-2x" id="like-bttn" onclick="likeUnlike()">
+						</i>
+						<h2
+							id="song-name"
+							style="
+								display: inline;
+								font-family: Lucida Console, Courier, monospace;
+							"
+						>
+							Song
+						</h2>
 
 						<h3 id="song-author">Author</h3>
 					</div>
 				</div>
 				<div class="side3" style="text-align: right; margin-right: 42px;">
 					<div id="show-playlist">
-						<h4 style="color: rgb(255, 136, 0);">Up next</h4>
+						<h3 style="color: rgb(255, 136, 0);">Up next</h3>
 						<ul id="playlist" style="list-style-type: none;"></ul>
 					</div>
 				</div>
 			</div>
 
 			<footer style="background-color: rgb(72, 72, 72);">
-				<input type="range" id="progress-bar" min="0" max="100" value="10" />
+				<input
+					type="range"
+					id="progress-bar"
+					min="0"
+					max="100"
+					onchange="changeSongTime()"
+				/>
 
 				<div class="song-config">
 					<div class="fside1"></div>

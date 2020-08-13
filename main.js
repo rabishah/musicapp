@@ -3,19 +3,22 @@ let playlist = [
 		name: "Level of Concern",
 		author: "Twenty One Pilots",
 		audio_src: "./src/music/level_of_concern.mp3",
-		img_src: "./src/images/level_of_concern.jpeg",
+		img_src: "./src/images/twenty-one-pilots.jpg",
+		like: 0,
 	},
 	{
 		name: "Kalimba",
 		author: "Khurangbin",
 		audio_src: "./src/music/Kalimba.mp3",
 		img_src: "./src/images/imagine_dragons.jpeg",
+		like: 0,
 	},
 	{
 		name: "Stars",
 		author: "Pink Floyd",
 		audio_src: "./src/music/star.mp3",
 		img_src: "./src/images/pink_floyd.png",
+		like: 0,
 	},
 ];
 
@@ -44,11 +47,13 @@ for (let i = 0, j = 1; i < list_size; i++) {
 function loadSong() {
 	clearInterval(timer);
 	progress_bar.value = 0;
+	audio.pause();
 	audio.src = playlist[song_index].audio_src;
 	thumbnail.src = playlist[song_index].img_src;
 	document.getElementById("song-name").innerHTML = playlist[song_index].name;
 	document.getElementById("song-author").innerHTML =
 		playlist[song_index].author;
+	likefun();
 	timer = setInterval(changeProgressBar, 100);
 	audio.addEventListener("ended", nextSong);
 }
@@ -104,4 +109,22 @@ function shuffle() {}
 function changeProgressBar() {
 	progress_bar.value = audio.currentTime * (100 / audio.duration);
 }
-function like() {}
+function changeSongTime() {
+	audio.currentTime = audio.duration * (progress_bar.value / 100);
+}
+
+function likeUnlike() {
+	if (playlist[song_index].like == 0) playlist[song_index].like = 1;
+	else playlist[song_index].like = 0;
+
+	likefun();
+}
+function likefun() {
+	if (playlist[song_index].like == 1) {
+		document.getElementById("like-bttn").style.display = "inline";
+		document.getElementById("unlike-bttn").style.display = "none";
+	} else {
+		document.getElementById("like-bttn").style.display = "none";
+		document.getElementById("unlike-bttn").style.display = "inline";
+	}
+}
