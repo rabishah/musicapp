@@ -97,7 +97,8 @@ The goal is to build a music player app from scratch while learning the basic co
   - Play / pause / seek song
 - Refactor app to typescript (build setup already provided)
 ### Resources
-TODO
+- [Sample Youtube API usage](http://jsfiddle.net/e31kwvph/3/)
+- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 
 ## Day 5 (Frameworks)
 ### Concepts
