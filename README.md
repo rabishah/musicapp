@@ -99,6 +99,7 @@ The goal is to build a music player app from scratch while learning the basic co
 ### Resources
 - [Sample Youtube API usage](http://jsfiddle.net/e31kwvph/3/)
 - [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [Youtube API doc](https://developers.google.com/youtube/iframe_api_reference#Functions)
 
 ## Day 5 (Frameworks)
 ### Concepts
