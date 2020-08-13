@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 var bodyParser = require("body-parser");
+var cors = require('cors');
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 const _ = require("lodash");
@@ -30,6 +31,9 @@ db.defaults({
     ],
   },
 }).write();
+
+// allow CORS
+app.use(cors());
 
 // parse application/json
 app.use(bodyParser.json());
