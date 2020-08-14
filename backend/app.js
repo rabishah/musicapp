@@ -7,6 +7,7 @@ const FileSync = require("lowdb/adapters/FileSync");
 const _ = require("lodash");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger.json");
+const cors = require('cors')
 
 const port = 3000;
 
