@@ -1,0 +1,173 @@
+html,
+body {
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	width: 100vw;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+}
+li {
+	margin-bottom: 5px;
+}
+footer {
+	background-color: rgb(72, 72, 72);
+}
+.search-container {
+	margin: 20px auto 0 20px;
+	padding: 30px;
+	width: auto;
+}
+.search {
+	border-top-style: hidden;
+	border-right-style: hidden;
+	border-left-style: hidden;
+	border-bottom: 5px solid rgb(255, 136, 0);
+	background: none;
+	outline: none;
+	font-size: 120%;
+	padding: 0;
+	width: 0;
+	transition: 0.3s ease-in;
+}
+.search-container:hover > input {
+	width: 30vw;
+}
+#root {
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+}
+.container {
+	background-color: #fff;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.song-info {
+	flex: 1;
+	display: flex;
+}
+.side1 {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.side2 {
+	flex: 3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cside2 {
+	flex: 3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.side3 {
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	text-align: right;
+	margin-right: 42px;
+}
+.song-config {
+	background-color: rgb(72, 72, 72);
+	display: flex;
+	flex-direction: row;
+}
+.fside1 {
+	flex: 1;
+}
+.fside2 {
+	flex: 3;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.fside3 {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+.song-artist {
+	flex: 1;
+	text-align: center;
+}
+.fixed-size {
+	padding: 10px;
+}
+.fixed-size2 {
+	padding: 5px;
+}
+.fa-search {
+	color: rgb(255, 136, 0);
+}
+#progress-bar {
+	min-width: 100%;
+	margin: 0;
+}
+
+#player {
+	visibility: hidden;
+	height: 0;
+	width: 0;
+}
+#songForm {
+	display: block;
+	margin-bottom: 15px;
+}
+
+#artistForm {
+	display: block;
+	margin-bottom: 15px;
+}
+
+#imageForm {
+	display: block;
+	margin-bottom: 15px;
+}
+
+#youtubeForm {
+	display: block;
+	margin-bottom: 15px;
+}
+#thumbnail {
+	max-height: 800px;
+	max-width: 500px;
+}
+#song-name {
+	display: inline;
+	font-family: Lucida Console, Courier, monospace;
+}
+#playlist {
+	list-style-type: none;
+	font-family: Lucida Console, Courier, monospace;
+}
+#playlist-head {
+	color: rgb(255, 136, 0);
+}
+/*#progress-bar::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 8px;
+	height: 8px;
+	background: #4caf50;
+	cursor: pointer;
+}
+.progress-bar::-moz-range-thumb {
+	width: 25px;
+	height: 25px;
+	background: #4caf50;
+	cursor: pointer;
+}*/
