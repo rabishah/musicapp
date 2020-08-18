@@ -1,68 +1,150 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Onboarding with HTML5 Music App
 
-## Available Scripts
+### Introdution to web development
 
-In the project directory, you can run:
+The goal is to build a music player app from scratch while learning the basic concepts of HTML , CSS, JS (Basic JS, ES6, Typescript and Framework).
 
-### `npm start`
+### Objective for each day
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Conduct Morning session (1-2 hrs) on the objective of the day, technical session and provide resources.
+- Candidate will by the end of the day move their code into a different branch in this repository.
+- Mentors / Buddies reviews the code and provides input and feedbacks.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Timeline
 
-### `npm test`
+- [Day 1 - HTML, CSS](#day-1-html-css)
+- [Day 2/3 - Introduction to JS](#day-23-introduction-to-JS)
+- [Day 4 - Async programming, Typescript](#day-4-async-programming-typescript)
+- [Day 5 - Frameworks](#day-5-frameworks)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Day 1 (HTML, CSS)
 
-### `npm run build`
+### Concepts
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Basics of HTML, CSS
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Exercises
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Create HTML, CSS for the music play app with the design provided.
+- Integrate Font Awesome to include icons.
 
-### `npm run eject`
+### Resources
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [HTML & CSS tutorial](https://learn.shayhowe.com/html-css/getting-to-know-html/)
+- [Flex](https://www.youtube.com/watch?v=k32voqQhODc)
+- [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Day 2/3 (Introduction to JS)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Concepts
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- JS fundamentals
+  - ES6 vs ES5 - Use ES6 wherever you can
+    - Stay away from
+      - prototype
+      - classes defined as functions
+  - console commands
+  - variables
+  - control flow, operators
+  - JSON
+  - functions - normal, arrow
+  - scopes and closure
+  - classes
+  - map, reduce, filter, some, find
+  - lodash utilities
+  - setTimeout, setInterval, clearTimeout, clearInterval
+- DOM manipulation
+  - Getting dom elements
+    - document.getElementById
+    - document.getElementByClassName
+    - docuement.querySelector
+    - document.querySelectorAll
+  - Traversing dom
+    ```
+    myElement.children
+    myElement.firstElementChild
+    myElement.lastElementChild
+    myElement.previousElementSibling
+    myElement.nextElementSibling
+    ```
+  - Get / set DOM attributes, html, text, styles
+  - Dom events
+- Chrome dev tools - Intro to consoles, sources, inspect elements.
 
-## Learn More
+### Exercises
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Implement interactions with dummy data
+  - Implement play / pause toggle
+  - Implement next song / prev song with changes to cover, and song info
+  - Show / hide playlist
+  - Shuffle songs
+  - Make progress bar ticking
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Resources
 
-### Code Splitting
+- Javascript
+  - [Javascript Cheatsheet](https://www.notion.so/Javascript-Cheatsheet-82c719fa8ea446d89a811997e54668dd)
+  - [Simplify your javascript using map, reduce and filter](https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d)
+  - [Understanding Closures](https://medium.com/madhash/understanding-closures-in-javascript-in-3-minutes-557ebb8a215b)
+  - [Javascript Scope](https://dmitripavlutin.com/javascript-scope/)
+- DOM manipulation
+  - [DOM Navigation](https://javascript.info/dom-navigation)
+  - [DOM Manipulation](https://www.theodinproject.com/courses/web-development-101/lessons/dom-manipulation)
+- Chrome dev tools
+  - [Debugging Chrome](https://javascript.info/debugging-chrome)
+  - [Console Commands](https://css-tricks.com/a-guide-to-console-commands/)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Day 4 (Async programming, Typescript)
 
-### Analyzing the Bundle Size
+### Concepts
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- Introduction to async programming in JS
+  - Event loop?
+  - Callbacks
+  - Promises
+  - Async / await
+- Typescript
+  - Introduction to typescript - Why? How
+  - Basic typescript concepts
+  - How to refactor js to ts
 
-### Making a Progressive Web App
+### Exercises
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- Wire up music player app with the backend (node js server provided)
+  - Get playlist info
+  - Playlist CRUD
+  - Search API
+  - Get song info
+  - Like song API
+  - Play / pause / seek song
+- Refactor app to typescript (build setup already provided)
 
-### Advanced Configuration
+### Resources
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- [Sample Youtube API usage](http://jsfiddle.net/e31kwvph/3/)
+- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [Youtube API doc](https://developers.google.com/youtube/iframe_api_reference#Functions)
 
-### Deployment
+## Day 5 (Frameworks)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### Concepts
 
-### `npm run build` fails to minify
+- Why use frameworks?
+- Introduction to React - Bare minimum
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Exercises
+
+- Refactor app to react
+- Use create-react-app to bootstrap
+- Have separate UI components (presentation) and container components
+
+### Resources
+
+TODO
+
+# Design
+
+![Design](/public/mock.png?raw=true "Music app for onboarding")
+For measurement, please refert to `/public/measurement.png` file found in this repository.
+
+> Happy Codding

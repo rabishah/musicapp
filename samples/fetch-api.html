@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fetch API</title>
+    <meta name="description" content="Fetch API">
+    <meta name="author" content="musicapp">
+</head>
+
+<body>
+    <div id="song-list"></div>
+    <script type="text/javascript">
+        function renderSongList(songs) {
+            // create a 'ul' element
+            var ulElm = document.createElement('ul');
+
+            // create 'li' element for each song
+            songs.forEach(song => {
+                var liElm = document.createElement('li');
+                liElm.innerText = song.title;
+
+                // append li to 'ul' element
+                ulElm.appendChild(liElm);
+            });
+
+            // append 'ul' i.e. song list to container
+            document.getElementById('song-list').appendChild(ulElm);
+        }
+
+        fetch('http://localhost:3000/playlist')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                renderSongList(data.songs);
+            });
+    </script>
+</body>
+
+</html>
